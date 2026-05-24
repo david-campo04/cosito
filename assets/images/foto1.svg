@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0a0a0a"/>
+  <text x="400" y="45" fill="#990000" font-family="Arial,sans-serif" font-size="20" text-anchor="middle">Voltaje en carga RC</text>
+  <line x1="80" y1="420" x2="720" y2="420" stroke="#555" stroke-width="2"/>
+  <line x1="80" y1="420" x2="80" y2="80" stroke="#555" stroke-width="2"/>
+  <text x="400" y="465" fill="#888" font-family="Arial,sans-serif" font-size="14" text-anchor="middle">tiempo (t)</text>
+  <text x="35" y="250" fill="#888" font-family="Arial,sans-serif" font-size="14" text-anchor="middle" transform="rotate(-90 35 250)">V(t)</text>
+  <path d="M80 380 C220 370 380 210 720 110" stroke="#990000" stroke-width="3" fill="none"/>
+  <line x1="80" y1="110" x2="720" y2="110" stroke="#990000" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.55"/>
+  <text x="735" y="115" fill="#990000" font-family="Arial,sans-serif" font-size="14">Vs</text>
+  <circle cx="80" cy="380" r="5" fill="#990000"/>
+  <text x="95" y="400" fill="#aaa" font-family="Arial,sans-serif" font-size="12">V0</text>
+</svg>

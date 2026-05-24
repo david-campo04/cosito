@@ -1,0 +1,7 @@
+Coloca aquí los videos MP4 del proyecto:
+
+- videoRC.mp4      — Fondo del hero (circuito RC general)
+- videoCarga.mp4   — Demostración de carga del capacitor
+- videoDescarga.mp4 — Demostración de descarga del capacitor
+
+Recomendaciones: formato MP4 (H.264), resolución 1920×1080, duración 10–30 s en loop.

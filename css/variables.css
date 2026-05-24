@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&subset=latin,latin-ext&display=swap");
+
+:root {
+  --color-red: #990000;
+  --color-red-light: #b30000;
+  --color-red-glow: rgba(153, 0, 0, 0.4);
+  --color-blue: #63b3ff;
+  --color-blue-alt: #4da6ff;
+  --color-blue-light: #8ecbff;
+  --color-blue-glow: rgba(99, 179, 255, 0.4);
+
+  --bg-dark: #000000;
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(20px);
+
+  --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --section-padding: 120px 10%;
+  --radius-lg: 30px;
+  --radius-xl: 35px;
+  --max-content: 1200px;
+}

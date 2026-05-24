@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circuitos RC — Respuesta Forzada y Natural</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/rc-circuits.css" />
+    <script src="js/mathjax-config.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <div class="background-grid"></div>
+    <div class="glow-red"></div>
+    <div class="glow-blue"></div>
+
+    <nav class="page-nav">
+      <a href="index.html">Inicio</a>
+      <a href="componentes.html">Componentes</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <video autoplay muted loop playsinline poster="assets/images/hero-rc.jpg">
+        <source src="assets/videos/videoRC.mp4" type="video/mp4" />
+      </video>
+      <h1>Circuitos RC</h1>
+      <p>Estudio dinámico de carga y descarga en circuitos RC mediante análisis matemático y comportamiento transitorio.</p>
+      <div class="scroll">SCROLL ↓</div>
+    </section>
+
+    <!-- RESPUESTA FORZADA -->
+    <section class="section" id="forzada">
+      <div class="section-content">
+        <h2 class="section-title">Respuesta Forzada</h2>
+        <p class="text">
+          Cuando se conecta una fuente de voltaje a un circuito RC, el capacitor comienza a cargarse progresivamente.
+          El voltaje aumenta exponencialmente hasta aproximarse al voltaje de la fuente.
+        </p>
+        <div class="formula-container">
+          <div class="formula">
+            <div class="math">$$V(0^-) = V(0^+) = V_0$$</div>
+            <div class="math">$$\frac{dV}{dt}+\frac{V}{RC}=\frac{V_s}{RC}$$</div>
+          </div>
+          <div class="formula">
+            <div class="math">$$\frac{V-V_s}{V_0-V_s}=e^{-t/\tau}$$</div>
+            <div class="math">$$V(t)=V_s+(V_0-V_s)e^{-t/\tau}$$</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO CARGA -->
+    <section class="video-section" id="carga">
+      <video autoplay muted loop playsinline poster="assets/images/video-carga.jpg">
+        <source src="assets/videos/videoCarga.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay">
+        <h2>Respuesta Exponencial</h2>
+        <p>La corriente disminuye progresivamente mientras el capacitor almacena energía eléctrica hasta alcanzar el estado estable.</p>
+      </div>
+    </section>
+
+    <!-- ANÁLISIS VISUAL -->
+    <section class="section" id="visual-carga">
+      <div class="section-content">
+        <h2 class="section-title">Análisis Visual</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="assets/images/foto1.svg" alt="Gráfica de voltaje en carga RC" />
+            <div class="card-content">
+              <span>Voltaje</span>
+              <p>El voltaje aumenta exponencialmente hasta acercarse al voltaje de la fuente.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/foto2.svg" alt="Grafica de voltaje en el capacitor segun condiciones iniciales V0" />
+            <div class="card-content">
+              <span>Capacitor</span>
+              <p>La respuesta depende de las condiciones iniciales del capacitor antes de la carga.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/foto3.svg" alt="Corriente durante la carga" />
+            <div class="card-content">
+              <span>Corriente</span>
+              <p>La corriente disminuye exponencialmente a medida que el capacitor se carga.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESPUESTA NATURAL -->
+    <section class="section" id="natural">
+      <div class="section-content">
+        <h2 class="section-title blue">Respuesta Natural</h2>
+        <p class="text">
+          Cuando la fuente de voltaje se elimina abruptamente, el capacitor cargado se convierte en la única fuente de energía.
+          El voltaje decae exponencialmente con el tiempo.
+        </p>
+        <div class="formula-container">
+          <div class="formula blue-formula">
+            <div class="math">$$\frac{dV}{dt}+\frac{V}{RC}=0$$</div>
+            <div class="math">$$V(t)=V_0e^{-t/\tau}$$</div>
+          </div>
+        </div>
+        <div class="tau-grid">
+          <article class="tau-card">
+            <span>Constante de Tiempo</span>
+            <div class="math">$$\tau = RC$$</div>
+            <p>Determina la rapidez con la que el capacitor libera la energía almacenada.</p>
+          </article>
+          <article class="tau-card">
+            <span>Voltaje Residual</span>
+            <div class="math">$$V(\tau)=0.368V_0$$</div>
+            <p>Tras una constante de tiempo, el capacitor conserva el 36.8% de su voltaje inicial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO DESCARGA -->
+    <section class="video-section" id="descarga">
+      <video autoplay muted loop playsinline poster="assets/images/video-descarga.jpg">
+        <source src="assets/videos/videoDescarga.mp4" type="video/mp4" />
+      </video>
+      <div class="video-overlay">
+        <h2 style="color: #8ecbff">Energía en Decaimiento</h2>
+        <p>La energía almacenada se disipa progresivamente sobre la resistencia, generando una respuesta exponencial decreciente.</p>
+      </div>
+    </section>
+
+    <!-- GRÁFICA NATURAL -->
+    <section class="section" id="grafica">
+      <div class="section-content">
+        <h2 class="section-title blue">Decaimiento Exponencial</h2>
+        <p class="text">
+          El voltaje del capacitor disminuye exponencialmente. La energía inicial se disipa sobre la resistencia hasta alcanzar el equilibrio.
+        </p>
+        <div class="natural-graph">
+          <img src="assets/images/graficaNatural.svg" alt="Gráfica de decaimiento exponencial" />
+          <div class="graph-overlay">
+            <span>Respuesta Natural</span>
+            <div class="math">$$V(t)=V_0e^{-t/\tau}$$</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARATIVA -->
+    <section class="section" id="comparativa">
+      <div class="section-content">
+        <h2 class="section-title">Fuente vs Respuesta Natural</h2>
+        <div class="comparison-grid">
+          <article class="comparison-card red-card">
+            <h3>RC con Fuente</h3>
+            <p>El circuito recibe energía externa y el capacitor incrementa su voltaje hasta el estado estable.</p>
+            <div class="math">$$V(t)=V_s+(V_0-V_s)e^{-t/\tau}$$</div>
+          </article>
+          <article class="comparison-card blue-card">
+            <h3>RC sin Fuente</h3>
+            <p>El sistema depende de la energía almacenada en el capacitor, produciendo un decaimiento exponencial.</p>
+            <div class="math">$$V(t)=V_0e^{-t/\tau}$$</div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <script src="js/video-fallback.js"></script>
+  </body>
+</html>

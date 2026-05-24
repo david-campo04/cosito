@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <rect width="900" height="650" fill="#0a0a0a"/>
+  <text x="450" y="50" fill="#63b3ff" font-family="Arial,sans-serif" font-size="22" text-anchor="middle">Respuesta natural: V(t) = V0 * e^(-t/tau)</text>
+  <line x1="100" y1="550" x2="800" y2="550" stroke="#555" stroke-width="2"/>
+  <line x1="100" y1="550" x2="100" y2="100" stroke="#555" stroke-width="2"/>
+  <text x="450" y="590" fill="#888" font-family="Arial,sans-serif" font-size="14" text-anchor="middle">tiempo (t)</text>
+  <text x="55" y="320" fill="#888" font-family="Arial,sans-serif" font-size="14" text-anchor="middle" transform="rotate(-90 55 320)">V(t)</text>
+  <path d="M100 150 C260 155 480 360 800 520" stroke="#63b3ff" stroke-width="3" fill="none"/>
+  <line x1="100" y1="150" x2="800" y2="150" stroke="#63b3ff" stroke-width="1.5" stroke-dasharray="8 5" opacity="0.45"/>
+  <text x="815" y="155" fill="#63b3ff" font-family="Arial,sans-serif" font-size="14">V0</text>
+  <line x1="350" y1="550" x2="350" y2="330" stroke="#8ecbff" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.65"/>
+  <text x="350" y="575" fill="#8ecbff" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">tau</text>
+  <circle cx="350" cy="330" r="6" fill="#8ecbff"/>
+  <text x="370" y="325" fill="#8ecbff" font-family="Arial,sans-serif" font-size="13">0.368 V0</text>
+</svg>

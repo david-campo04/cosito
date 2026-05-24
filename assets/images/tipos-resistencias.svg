@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 380">
+  <rect width="560" height="380" fill="#111"/>
+  <text x="280" y="24" fill="#fff" font-family="Arial,sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Tipos de resistencias</text>
+
+  <!-- Carbono -->
+  <rect x="20" y="40" width="250" height="150" rx="10" fill="#1a1a1a" stroke="#990000" stroke-width="1.5"/>
+  <text x="145" y="58" fill="#990000" font-size="11" font-weight="bold" text-anchor="middle">Carbono</text>
+  <rect x="60" y="78" width="170" height="22" rx="11" fill="#b8a080" stroke="#666"/>
+  <rect x="85" y="81" width="12" height="16" fill="#CC0000"/><rect x="102" y="81" width="12" height="16" fill="#000"/>
+  <rect x="119" y="81" width="12" height="16" fill="#FFD700"/><rect x="136" y="81" width="12" height="16" fill="#8B4513"/>
+  <line x1="40" y1="89" x2="60" y2="89" stroke="#aaa" stroke-width="2"/><line x1="230" y1="89" x2="250" y2="89" stroke="#aaa" stroke-width="2"/>
+  <text x="145" y="125" fill="#aaa" font-size="9" text-anchor="middle">Cilindrica con bandas de color</text>
+  <text x="145" y="142" fill="#666" font-size="8" text-anchor="middle">Uso general, bajo costo</text>
+  <text x="145" y="175" fill="#555" font-size="8" text-anchor="middle">Tolerancia tipica: 5%</text>
+
+  <!-- Pelicula metalica -->
+  <rect x="290" y="40" width="250" height="150" rx="10" fill="#1a1a1a" stroke="#990000" stroke-width="1.5"/>
+  <text x="415" y="58" fill="#990000" font-size="11" font-weight="bold" text-anchor="middle">Pelicula metalica</text>
+  <rect x="355" y="82" width="120" height="14" rx="7" fill="#c8d0d8" stroke="#888"/>
+  <rect x="370" y="84" width="8" height="10" fill="#0066CC"/><rect x="382" y="84" width="8" height="10" fill="#000"/>
+  <rect x="394" y="84" width="8" height="10" fill="#FFD700"/><rect x="406" y="84" width="8" height="10" fill="#8B4513"/>
+  <line x1="330" y1="89" x2="355" y2="89" stroke="#aaa" stroke-width="1.5"/><line x1="475" y1="89" x2="500" y2="89" stroke="#aaa" stroke-width="1.5"/>
+  <text x="415" y="125" fill="#aaa" font-size="9" text-anchor="middle">Cuerpo azul/beige, mas precisa</text>
+  <text x="415" y="142" fill="#666" font-size="8" text-anchor="middle">Estabilidad termica superior</text>
+  <text x="415" y="175" fill="#555" font-size="8" text-anchor="middle">Tolerancia tipica: 1%</text>
+
+  <!-- Variable (potenciometro) -->
+  <rect x="20" y="205" width="250" height="155" rx="10" fill="#1a1a1a" stroke="#990000" stroke-width="1.5"/>
+  <text x="145" y="223" fill="#990000" font-size="11" font-weight="bold" text-anchor="middle">Variable (potenciometro)</text>
+  <circle cx="145" cy="280" r="35" fill="#333" stroke="#990000" stroke-width="2"/>
+  <line x1="145" y1="280" x2="170" y2="260" stroke="#fff" stroke-width="2"/>
+  <rect x="115" y="318" width="60" height="20" rx="3" fill="#444" stroke="#666"/>
+  <circle cx="125" cy="328" r="3" fill="#aaa"/><circle cx="145" cy="328" r="3" fill="#aaa"/><circle cx="165" cy="328" r="3" fill="#aaa"/>
+  <text x="125" y="348" fill="#666" font-size="7" text-anchor="middle">1</text>
+  <text x="145" y="348" fill="#666" font-size="7" text-anchor="middle">2</text>
+  <text x="165" y="348" fill="#666" font-size="7" text-anchor="middle">3</text>
+  <text x="145" y="295" fill="#888" font-size="8" text-anchor="middle">Valor ajustable</text>
+
+  <!-- SMD -->
+  <rect x="290" y="205" width="250" height="155" rx="10" fill="#1a1a1a" stroke="#990000" stroke-width="1.5"/>
+  <text x="415" y="223" fill="#990000" font-size="11" font-weight="bold" text-anchor="middle">SMD (montaje superficial)</text>
+  <rect x="340" y="265" width="150" height="4" fill="#222" stroke="#555"/>
+  <rect x="385" y="258" width="60" height="18" rx="2" fill="#1a1a1a" stroke="#888" stroke-width="1"/>
+  <rect x="395" y="262" width="40" height="10" fill="#333"/>
+  <text x="415" y="252" fill="#666" font-size="7" text-anchor="middle">Placa PCB</text>
+  <text x="415" y="305" fill="#aaa" font-size="9" text-anchor="middle">Rectangular, sin patas</text>
+  <text x="415" y="322" fill="#666" font-size="8" text-anchor="middle">Soldada directamente sobre la placa</text>
+  <text x="415" y="348" fill="#555" font-size="8" text-anchor="middle">Codigo numerico impreso (ej: 103 = 10 kohm)</text>
+</svg>

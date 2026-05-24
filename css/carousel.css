@@ -1,0 +1,466 @@
+@import url("variables.css");
+
+/* Montserrat en absolutamente todo el carrusel */
+body.carousel-page,
+body.carousel-page h1,
+body.carousel-page h2,
+body.carousel-page p,
+body.carousel-page span,
+body.carousel-page button,
+body.carousel-page .carousel-brand,
+body.carousel-page .carousel-tag,
+body.carousel-page .slide .text,
+body.carousel-page .slide .text h1,
+body.carousel-page .slide .text h2,
+body.carousel-page .slide .text p {
+  font-family: var(--font-body);
+}
+
+body.carousel-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+/* Encabezado del módulo */
+.carousel-header {
+  position: fixed;
+  top: 24px;
+  left: 40px;
+  z-index: 50;
+  text-align: left;
+}
+
+.carousel-tag {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  color: var(--color-red);
+  margin-bottom: 4px;
+}
+
+.carousel-brand {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: white;
+  text-shadow: 0 0 30px var(--color-red-glow);
+  line-height: 1.1;
+}
+
+.carousel-counter {
+  position: fixed;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.carousel-counter span {
+  color: var(--color-red);
+  font-weight: 600;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-content);
+  height: calc(100vh - 100px);
+  min-height: 520px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 24px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 40px 60px 120px;
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* Panel de texto con efecto cristal */
+.slide .text {
+  flex: 1;
+  max-width: 480px;
+  padding: 48px 44px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  animation: fadeUp 0.9s ease;
+}
+
+.slide .text h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 12px;
+  color: var(--color-red);
+  text-shadow: 0 0 24px rgba(153, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.slide .text h2 {
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: none;
+  margin-bottom: 24px;
+  color: var(--color-blue-light);
+}
+
+.slide .text p {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Marco de imagen */
+.slide .image {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide .image-frame {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: 12px;
+  border-radius: calc(var(--radius-lg) + 4px);
+  background: linear-gradient(135deg, rgba(153, 0, 0, 0.3), rgba(99, 179, 255, 0.15));
+  box-shadow: 0 0 50px rgba(153, 0, 0, 0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.slide.active .image-frame:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(153, 0, 0, 0.25);
+}
+
+.slide .image-frame img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+  background: #0a0a0a;
+}
+
+/* Diagramas tecnicos SVG: mostrar completo sin recortar */
+.slide .image-frame img.tech-diagram {
+  object-fit: contain;
+  height: 380px;
+  padding: 8px;
+  background: #0d0d0d;
+}
+
+.slide .image-frame.wide {
+  max-width: 480px;
+}
+
+/* ── Zoom de diagramas ── */
+.image-frame.zoomable {
+  cursor: zoom-in;
+  position: relative;
+}
+
+.image-frame.zoomable::after {
+  content: "Pasa el mouse o haz clic para ampliar";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.image-frame.zoomable:hover::after,
+.image-frame.zoomable:focus-visible::after {
+  opacity: 1;
+}
+
+.image-frame.zoomable:hover .tech-diagram,
+.image-frame.zoomable:focus-visible .tech-diagram {
+  transform: scale(1.04);
+  transition: transform 0.35s ease;
+}
+
+.slide .image-frame img.tech-diagram {
+  transition: transform 0.35s ease;
+}
+
+/* Vista previa al pasar el mouse */
+.diagram-hover-preview {
+  position: fixed;
+  z-index: 200;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+  background: rgba(8, 8, 8, 0.96);
+  border: 1px solid rgba(153, 0, 0, 0.35);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85), 0 0 40px rgba(153, 0, 0, 0.15);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.96);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.diagram-hover-preview.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.diagram-hover-preview img {
+  flex: 1;
+  width: 100%;
+  height: calc(100% - 28px);
+  object-fit: contain;
+  border-radius: 12px;
+  background: #0d0d0d;
+}
+
+.diagram-hover-preview p {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Modal ampliado (clic) */
+.diagram-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+
+.diagram-lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.diagram-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.diagram-lightbox__panel {
+  position: relative;
+  z-index: 1;
+  width: min(920px, 95vw);
+  max-height: 90vh;
+  padding: 28px;
+  border-radius: var(--radius-xl);
+  background: rgba(12, 12, 12, 0.98);
+  border: 1px solid rgba(153, 0, 0, 0.3);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transform: scale(0.92);
+  transition: transform 0.35s ease;
+}
+
+.diagram-lightbox.open .diagram-lightbox__panel {
+  transform: scale(1);
+}
+
+.diagram-lightbox__img {
+  width: 100%;
+  max-height: calc(90vh - 120px);
+  object-fit: contain;
+  border-radius: 16px;
+  background: #0a0a0a;
+}
+
+.diagram-lightbox__caption {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.diagram-lightbox__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.diagram-lightbox__close:hover {
+  background: var(--color-red);
+  border-color: var(--color-red);
+}
+
+body.diagram-zoom-open {
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .diagram-hover-preview {
+    display: none;
+  }
+
+  .image-frame.zoomable::after {
+    content: "Toca para ampliar";
+    opacity: 1;
+  }
+}
+
+.controls {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 10;
+}
+
+.controls button {
+  padding: 14px 28px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  border: 1px solid rgba(153, 0, 0, 0.5);
+  border-radius: 100px;
+  background: rgba(153, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.controls button:hover {
+  background: var(--color-red);
+  border-color: var(--color-red);
+  box-shadow: 0 0 24px rgba(153, 0, 0, 0.45);
+  transform: translateY(-2px);
+}
+
+.dots {
+  position: absolute;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: 0.35s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--color-red);
+  border-color: var(--color-red);
+  transform: scale(1.35);
+  box-shadow: 0 0 12px rgba(153, 0, 0, 0.6);
+}
+
+@media (max-width: 900px) {
+  .carousel-header { left: 24px; top: 16px; }
+  .carousel-counter { display: none; }
+
+  .container {
+    height: auto;
+    min-height: calc(100vh - 60px);
+    margin: 0 16px;
+  }
+
+  .slide {
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+    padding: 20px 16px 140px;
+    position: relative;
+    height: auto;
+    min-height: calc(100vh - 120px);
+  }
+
+  .slide:not(.active) {
+    display: none;
+  }
+
+  .slide .text {
+    max-width: 100%;
+    padding: 32px 28px;
+  }
+
+  .slide .image,
+  .slide .text { flex: none; width: 100%; }
+
+  .slide .image-frame { max-width: 100%; }
+  .slide .image-frame img { height: 240px; }
+  .slide .image-frame img.tech-diagram { height: 300px; }
+}

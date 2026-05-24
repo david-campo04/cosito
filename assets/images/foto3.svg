@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#0a0a0a"/>
+  <text x="400" y="45" fill="#990000" font-family="Arial,sans-serif" font-size="20" text-anchor="middle">Corriente en carga RC</text>
+  <line x1="80" y1="420" x2="720" y2="420" stroke="#555" stroke-width="2"/>
+  <line x1="80" y1="420" x2="80" y2="80" stroke="#555" stroke-width="2"/>
+  <text x="400" y="465" fill="#888" font-family="Arial,sans-serif" font-size="14" text-anchor="middle">tiempo (t)</text>
+  <text x="35" y="250" fill="#888" font-family="Arial,sans-serif" font-size="14" text-anchor="middle" transform="rotate(-90 35 250)">I(t)</text>
+  <path d="M80 100 C200 105 420 290 720 395" stroke="#990000" stroke-width="3" fill="none"/>
+  <circle cx="80" cy="100" r="5" fill="#990000"/>
+  <text x="95" y="95" fill="#aaa" font-family="Arial,sans-serif" font-size="12">I max</text>
+</svg>

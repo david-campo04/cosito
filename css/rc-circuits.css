@@ -1,0 +1,314 @@
+@import url("variables.css");
+
+/* ── Layout de secciones ── */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-padding);
+}
+
+.section-content {
+  width: 100%;
+  max-width: var(--max-content);
+}
+
+.section-title {
+  font-size: 70px;
+  margin-bottom: 40px;
+  color: var(--color-red);
+  text-shadow: 0 0 20px rgba(153, 0, 0, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Hero ── */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 120px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.15), 0 0 50px var(--color-red-glow);
+  animation: fadeUp 1.2s ease;
+}
+
+.hero p {
+  margin-top: 20px;
+  font-size: 18px;
+  max-width: 700px;
+  line-height: 2;
+  opacity: 0.8;
+  animation: fadeUp 1.8s ease;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 40px;
+  font-size: 12px;
+  letter-spacing: 4px;
+  opacity: 0.5;
+  animation: bounce 2s infinite;
+}
+
+/* ── Fórmulas ── */
+.formula-container {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.formula {
+  position: relative;
+  overflow: hidden;
+  padding: 50px;
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  transition: 0.6s ease;
+}
+
+.formula::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  transform: translateX(-100%);
+}
+
+.formula:hover::before { animation: shine 1.5s; }
+.formula:hover { transform: translateY(-10px); box-shadow: 0 0 40px rgba(153, 0, 0, 0.12); }
+.blue-formula:hover { box-shadow: 0 0 40px rgba(99, 179, 255, 0.15); }
+
+/* ── Videos a pantalla completa ── */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a0000 0%, #000 50%, #001a33 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.video-overlay h2 {
+  font-size: 80px;
+  margin-bottom: 30px;
+  letter-spacing: 0.04em;
+}
+
+.video-overlay p {
+  max-width: 800px;
+  line-height: 2;
+  font-size: 16px;
+}
+
+/* ── Tarjetas de galería ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 80px;
+}
+
+.card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: 0.6s ease;
+  backdrop-filter: blur(15px);
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(153, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: grayscale(40%);
+  opacity: 0.7;
+  transition: 0.7s ease;
+}
+
+.card img[src$=".svg"] {
+  object-fit: contain;
+  background: #0a0a0a;
+  padding: 12px;
+}
+
+.card:hover img { filter: grayscale(0%); opacity: 1; transform: scale(1.08); }
+
+.card-content { padding: 35px; }
+
+.card span {
+  color: var(--color-red);
+  letter-spacing: 3px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.card p { margin-top: 20px; font-size: 13px; line-height: 2; }
+
+/* ── Grid τ (constante de tiempo) ── */
+.tau-grid {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.tau-card {
+  position: relative;
+  overflow: hidden;
+  padding: 50px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(var(--glass-bg), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(77, 166, 255, 0.15);
+  backdrop-filter: var(--glass-blur);
+  transition: 0.6s ease;
+}
+
+.tau-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(77, 166, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77, 166, 255, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.4;
+}
+
+.tau-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px rgba(77, 166, 255, 0.15), 0 0 80px rgba(77, 166, 255, 0.05);
+}
+
+.tau-card * { position: relative; z-index: 2; }
+.tau-card span { color: var(--color-blue-light); letter-spacing: 3px; font-size: 11px; text-transform: uppercase; }
+.tau-card p { margin-top: 25px; line-height: 2; font-size: 13px; opacity: 0.85; }
+
+/* ── Gráfica natural ── */
+.natural-graph {
+  position: relative;
+  margin-top: 70px;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(77, 166, 255, 0.15);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  transition: 0.7s ease;
+}
+
+.natural-graph:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 50px rgba(77, 166, 255, 0.15), 0 0 90px rgba(77, 166, 255, 0.05);
+}
+
+.natural-graph img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  opacity: 0.75;
+  transition: 0.7s ease;
+  filter: grayscale(20%);
+}
+
+.natural-graph:hover img { transform: scale(1.03); opacity: 1; filter: grayscale(0%); }
+
+.graph-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.1));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 60px;
+}
+
+.graph-overlay span { color: var(--color-blue-light); letter-spacing: 5px; font-size: 12px; margin-bottom: 15px; }
+.graph-overlay .math { text-align: left; font-size: 35px; }
+
+/* ── Comparativa forzada vs natural ── */
+.comparison-grid {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.comparison-card {
+  padding: 50px;
+  border-radius: var(--radius-xl);
+  backdrop-filter: var(--glass-blur);
+  transition: 0.6s ease;
+}
+
+.comparison-card:hover { transform: translateY(-10px) scale(1.02); }
+
+.red-card { background: rgba(153, 0, 0, 0.08); border: 1px solid rgba(153, 0, 0, 0.25); }
+.blue-card { background: rgba(77, 166, 255, 0.08); border: 1px solid rgba(77, 166, 255, 0.25); }
+
+.comparison-card h3 { font-size: 40px; margin-bottom: 25px; letter-spacing: 0.03em; }
+.comparison-card p { line-height: 2; font-size: 14px; opacity: 0.85; }
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 60px; }
+  .section-title { font-size: 45px; }
+  .video-overlay h2 { font-size: 50px; }
+  .natural-graph img { height: 400px; }
+}

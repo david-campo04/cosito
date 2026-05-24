@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Componentes — Resistencias y Capacitores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
+  </head>
+  <body class="carousel-page">
+    <div class="background-grid"></div>
+    <div class="glow-red"></div>
+    <div class="glow-blue"></div>
+
+    <header class="carousel-header">
+      <span class="carousel-tag">Módulo introductorio</span>
+      <h1 class="carousel-brand">Componentes</h1>
+    </header>
+
+    <p class="carousel-counter"><span id="slide-current">1</span> / <span id="slide-total">5</span></p>
+
+    <nav class="page-nav">
+      <a href="index.html">Inicio</a>
+      <a href="circuitos-rc.html">Circuitos RC</a>
+    </nav>
+
+    <div class="container">
+      <div class="slide active">
+        <div class="text">
+          <h1>Resistencias</h1>
+          <h2>¿Qué son?</h2>
+          <p>
+            Las resistencias son componentes electrónicos que limitan el paso de la corriente eléctrica.
+            Se utilizan para proteger circuitos, dividir voltajes y controlar la intensidad de corriente.
+          </p>
+        </div>
+        <div class="image">
+          <div class="image-frame">
+            <img class="tech-diagram" src="assets/images/resistencia.svg" alt="Resistencia: componente fisico y simbolo R" />
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="text">
+          <h1>Código de Colores</h1>
+          <h2>Identificación</h2>
+          <p>
+            Las bandas de colores permiten identificar el valor de una resistencia.
+            Cada color representa un número, multiplicador o tolerancia.
+          </p>
+        </div>
+        <div class="image">
+          <div class="image-frame wide">
+            <img class="tech-diagram" src="assets/images/codigo-colores.svg" alt="Tabla del codigo de colores de resistencias" />
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="text">
+          <h1>Tipos de Resistencias</h1>
+          <h2>Componentes</h2>
+          <p>
+            Existen resistencias de carbón, película metálica, variables y SMD.
+            Cada una se utiliza dependiendo de la precisión y aplicación del circuito.
+          </p>
+        </div>
+        <div class="image">
+          <div class="image-frame wide">
+            <img class="tech-diagram" src="assets/images/tipos-resistencias.svg" alt="Tipos: carbono, pelicula, variable y SMD" />
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="text">
+          <h1>Capacitores</h1>
+          <h2>¿Qué hacen?</h2>
+          <p>
+            Los capacitores almacenan energía eléctrica temporalmente.
+            Son esenciales en filtros, temporizadores y circuitos RC.
+          </p>
+        </div>
+        <div class="image">
+          <div class="image-frame">
+            <img class="tech-diagram" src="assets/images/condensador.svg" alt="Capacitor: componente fisico y simbolo C" />
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="text">
+          <h1>Tipos de Capacitores</h1>
+          <h2>Clasificación</h2>
+          <p>
+            Los capacitores pueden ser cerámicos, electrolíticos, de poliéster o tántalo.
+            Cada tipo posee propiedades distintas de almacenamiento y estabilidad.
+          </p>
+        </div>
+        <div class="image">
+          <div class="image-frame wide">
+            <img class="tech-diagram" src="assets/images/tipos-capacitores.svg" alt="Tipos: ceramico, electrolitico, poliester y tantalio" />
+          </div>
+        </div>
+      </div>
+
+      <div class="dots"></div>
+      <div class="controls">
+        <button type="button" onclick="btnPrev()">⟵ Anterior</button>
+        <button type="button" onclick="btnNext()">Siguiente ⟶</button>
+      </div>
+    </div>
+
+    <!-- Vista previa al pasar el mouse -->
+    <div id="diagram-hover-preview" class="diagram-hover-preview" aria-hidden="true">
+      <img src="" alt="" />
+      <p></p>
+    </div>
+
+    <!-- Modal ampliado al hacer clic -->
+    <div id="diagram-lightbox" class="diagram-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="diagram-lightbox__backdrop"></div>
+      <div class="diagram-lightbox__panel">
+        <button type="button" class="diagram-lightbox__close" aria-label="Cerrar">&times;</button>
+        <img class="diagram-lightbox__img" src="" alt="" />
+        <p class="diagram-lightbox__caption"></p>
+      </div>
+    </div>
+
+    <script src="js/carousel.js"></script>
+    <script src="js/diagram-zoom.js"></script>
+  </body>
+</html>

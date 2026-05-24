@@ -1,0 +1,99 @@
+@import url("variables.css");
+
+@import url("typography.css");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-dark);
+  color: white;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+}
+
+/* Fondo decorativo compartido */
+.background-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -5;
+}
+
+.glow-red {
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  top: -250px;
+  right: -200px;
+  background: radial-gradient(circle, rgba(153, 0, 0, 0.22), transparent 70%);
+  filter: blur(120px);
+  z-index: -4;
+  animation: floatRed 8s ease-in-out infinite alternate;
+}
+
+.glow-blue {
+  position: fixed;
+  width: 700px;
+  height: 700px;
+  bottom: -300px;
+  left: -200px;
+  background: radial-gradient(circle, rgba(77, 166, 255, 0.18), transparent 70%);
+  filter: blur(120px);
+  z-index: -4;
+  animation: floatBlue 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatRed {
+  to { transform: translateY(40px); }
+}
+
+@keyframes floatBlue {
+  to { transform: translateY(-50px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes shine {
+  to { transform: translateX(200%); }
+}
+
+/* Utilidades de texto */
+.text {
+  font-size: 14px;
+  line-height: 2;
+  opacity: 0.9;
+  max-width: 850px;
+}
+
+.math {
+  font-size: 32px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.blue { color: var(--color-blue); text-shadow: 0 0 20px var(--color-blue-glow); }
+
+@media (max-width: 768px) {
+  .math { font-size: 20px; }
+}

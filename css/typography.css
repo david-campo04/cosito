@@ -1,0 +1,98 @@
+@import url("variables.css");
+
+/* ── Títulos (misma fuente que el panel de texto) ── */
+.font-display,
+h1.title-display,
+.section-title,
+.hero h1,
+.landing h1,
+.landing-card h2,
+.comparison-card h3,
+.video-overlay h2,
+.carousel-brand,
+.slide .text h1 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.landing-tag,
+.carousel-tag,
+.page-nav a {
+  font-family: var(--font-body);
+}
+
+.subtitle,
+.slide .text h2 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: var(--color-blue-light);
+  margin-bottom: 1.25rem;
+}
+
+.subtitle.red { color: #f0a0a0; }
+
+/* ── Navegación entre páginas ── */
+.page-nav {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+}
+
+.page-nav a {
+  padding: 10px 20px;
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.page-nav a:hover {
+  color: white;
+  background: var(--color-red);
+  box-shadow: 0 0 20px rgba(153, 0, 0, 0.35);
+}
+
+.page-nav a.active {
+  background: rgba(153, 0, 0, 0.25);
+  color: white;
+  border: 1px solid rgba(153, 0, 0, 0.4);
+}
+
+@media (max-width: 600px) {
+  .page-nav {
+    top: auto;
+    bottom: 16px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .page-nav a {
+    padding: 8px 14px;
+    font-size: 0.65rem;
+  }
+
+  body.carousel-page .page-nav {
+    top: 16px;
+    bottom: auto;
+    left: auto;
+    right: 16px;
+    transform: none;
+  }
+}
